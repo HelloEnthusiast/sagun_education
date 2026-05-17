@@ -62,7 +62,7 @@ export default function Home() {
                 <div className="card-body">
                   <div className="card-title">
                     <h3>Japan</h3>
-                    <span className="card-badge jp-badge">JP</span>
+                    <span className="fi fi-jp" style={{ fontSize: '1.5rem', borderRadius: '2px' }}></span>
                   </div>
                   <p className="card-text" style={{ textAlign: 'justify' }}>
                     Master the future through a perfect blend of advanced technology and timeless tradition, offering world-class language programs and career-focused vocational excellence.
@@ -87,7 +87,7 @@ export default function Home() {
                 <div className="card-body">
                   <div className="card-title">
                     <h3>United Kingdom</h3>
-                    <span className="card-badge uk-badge">GB</span>
+                    <span className="fi fi-gb" style={{ fontSize: '1.5rem', borderRadius: '2px' }}></span>
                   </div>
                   <p className="card-text" style={{ textAlign: 'justify' }}>
                     Step into a legacy of historic academic excellence at globally recognized universities, providing a prestigious gateway to vast international career prospects.
@@ -112,7 +112,7 @@ export default function Home() {
                 <div className="card-body">
                   <div className="card-title">
                     <h3>Finland</h3>
-                    <span className="card-badge fi-badge">FI</span>
+                    <span className="fi fi-fi" style={{ fontSize: '1.5rem', borderRadius: '2px' }}></span>
                   </div>
                   <p className="card-text" style={{ textAlign: 'justify' }}>
                     Thrive within the world’s premier education system, where high living standards and incredible scholarship opportunities meet a serene, pristine natural environment.

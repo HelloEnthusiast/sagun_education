@@ -17,9 +17,9 @@ const Footer = () => {
               Bridging local students to global institutions. Your success is our mission.
             </p>
             <div className="footer-socials">
-              <a href="https://www.facebook.com/share/18xX865mvD/?mibextid=wwXIfr" title="Facebook Japan" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook"></i><small>JP</small></a>
-              <a href="https://www.facebook.com/share/14auxj9osmr/?mibextid=wwXIfr" title="Facebook UK" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook"></i><small>UK</small></a>
-              <a href="https://www.facebook.com/share/1LF86wpZ9n/?mibextid=wwXIfr" title="Facebook Finland" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook"></i><small>FI</small></a>
+              <a href="https://www.facebook.com/share/18xX865mvD/?mibextid=wwXIfr" title="Facebook Japan" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook"></i><span className="fi fi-jp" style={{ fontSize: '0.85rem', marginTop: '4px' }}></span></a>
+              <a href="https://www.facebook.com/share/14auxj9osmr/?mibextid=wwXIfr" title="Facebook UK" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook"></i><span className="fi fi-gb" style={{ fontSize: '0.85rem', marginTop: '4px' }}></span></a>
+              <a href="https://www.facebook.com/share/1LF86wpZ9n/?mibextid=wwXIfr" title="Facebook Finland" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook"></i><span className="fi fi-fi" style={{ fontSize: '0.85rem', marginTop: '4px' }}></span></a>
               <a href="https://www.instagram.com/saguneducation/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
               <a href="https://www.youtube.com/@Sagunedu" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-youtube"></i></a>
               <a href="https://wa.me/9779803094437" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-whatsapp"></i></a>
