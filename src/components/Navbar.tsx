@@ -30,8 +30,8 @@ const Navbar = () => {
           <Image 
             src="/logo.jpeg" 
             alt="Sagun Education" 
-            width={90} 
-            height={80} 
+            width={140} 
+            height={140} 
             className="logo-img"
             priority
           />
