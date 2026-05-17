@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { submitInquiry } from '@/app/actions';
+import { Loader2 } from 'lucide-react';
 
 const InquiryForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,37 +43,42 @@ const InquiryForm = () => {
   return (
     <div className="form-wrapper">
       {status && (
-        <div className={`alert alert-${status.type}`} style={{ 
-          padding: '15px', 
-          marginBottom: '20px', 
-          borderRadius: '8px',
-          backgroundColor: status.type === 'success' ? '#d4edda' : '#f8d7da',
-          color: status.type === 'success' ? '#155724' : '#721c24',
-          border: `1px solid ${status.type === 'success' ? '#c3e6cb' : '#f5c6cb'}`,
-          textAlign: 'center'
-        }}>
+        <div 
+          role="alert"
+          aria-live="polite"
+          className={`alert alert-${status.type}`} 
+          style={{ 
+            padding: '15px', 
+            marginBottom: '20px', 
+            borderRadius: '8px',
+            backgroundColor: status.type === 'success' ? '#d4edda' : '#f8d7da',
+            color: status.type === 'success' ? '#155724' : '#721c24',
+            border: `1px solid ${status.type === 'success' ? '#c3e6cb' : '#f5c6cb'}`,
+            textAlign: 'center'
+          }}
+        >
           {status.message}
         </div>
       )}
       
       <form id="inquiryForm" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label className="form-label">Full Name</label>
-          <input type="text" name="name" className="form-control" placeholder="Enter your full name" required disabled={isSubmitting} />
+          <label htmlFor="name" className="form-label">Full Name</label>
+          <input type="text" id="name" name="name" className="form-control" placeholder="Enter your full name" required disabled={isSubmitting} />
         </div>
         <div className="form-grid-2">
           <div className="form-group">
-            <label className="form-label">Phone Number</label>
-            <input type="tel" name="phone" className="form-control" placeholder="e.g. 010-402004" required disabled={isSubmitting} />
+            <label htmlFor="phone" className="form-label">Phone Number</label>
+            <input type="tel" id="phone" name="phone" className="form-control" placeholder="e.g. 010-402004" required disabled={isSubmitting} />
           </div>
           <div className="form-group">
-            <label className="form-label">WhatsApp Number</label>
-            <input type="tel" name="whatsapp" className="form-control" placeholder="e.g. 9803094437" required disabled={isSubmitting} />
+            <label htmlFor="whatsapp" className="form-label">WhatsApp Number</label>
+            <input type="tel" id="whatsapp" name="whatsapp" className="form-control" placeholder="e.g. 9803094437" required disabled={isSubmitting} />
           </div>
         </div>
         <div className="form-group">
-          <label className="form-label">Preferred Destination</label>
-          <select name="destination" className="form-control" required defaultValue="" disabled={isSubmitting}>
+          <label htmlFor="destination" className="form-label">Preferred Destination</label>
+          <select id="destination" name="destination" className="form-control" required defaultValue="" disabled={isSubmitting}>
             <option value="" disabled>Select a destination</option>
             <option value="Japan">Japan</option>
             <option value="Finland">Finland</option>
@@ -81,8 +87,8 @@ const InquiryForm = () => {
           </select>
         </div>
         <div className="form-group">
-          <label className="form-label">Message (Optional)</label>
-          <textarea name="message" className="form-control" rows={4} placeholder="Tell us a bit about your academic background or specific queries..." disabled={isSubmitting}></textarea>
+          <label htmlFor="message" className="form-label">Message (Optional)</label>
+          <textarea id="message" name="message" className="form-control" rows={4} placeholder="Tell us a bit about your academic background or specific queries..." disabled={isSubmitting}></textarea>
         </div>
         <button 
           type="submit" 
@@ -101,7 +107,7 @@ const InquiryForm = () => {
         >
           {isSubmitting ? (
             <>
-              <i className="fas fa-spinner fa-spin"></i> Sending...
+              <Loader2 className="spin" size={20} /> Sending...
             </>
           ) : (
             'Request a Call Back'

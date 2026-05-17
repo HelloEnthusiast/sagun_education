@@ -12,7 +12,7 @@ export default function Home() {
         <div className="container hero-content">
           <AnimatedSection>
             <h1 className="hero-title">
-              <span className="navy">Unlocking Global Futures</span><br/>
+              <span className="navy">Unlocking Global Futures</span><br />
               <span className="crimson">Empowering Careers</span>
             </h1>
             <p>
@@ -20,7 +20,7 @@ export default function Home() {
             </p>
             <div className="hero-btns">
               <Link href="/services" className="btn btn-primary">
-                Explore Destinations <ArrowRight className="ml-2 h-5 w-5" />
+                Explore Destinations <ArrowRight size={20} style={{ marginLeft: '8px' }} />
               </Link>
               <Link href="/services#contact" className="btn btn-secondary">Get Consultation</Link>
             </div>
@@ -51,10 +51,10 @@ export default function Home() {
             <AnimatedSection delay={0.1}>
               <div className="card">
                 <div style={{ position: 'relative', height: '240px' }}>
-                  <Image 
-                    src="/images/japan_card.png" 
-                    alt="Study in Japan" 
-                    fill 
+                  <Image
+                    src="/images/japan_card.png"
+                    alt="Study in Japan"
+                    fill
                     style={{ objectFit: 'cover' }}
                   />
                   <div className="card-overlay"></div>
@@ -62,7 +62,7 @@ export default function Home() {
                 <div className="card-body">
                   <div className="card-title">
                     <h3>Japan</h3>
-                    <span className="fi fi-jp" style={{ fontSize: '1.5rem', borderRadius: '2px' }}></span>
+                    <span className="card-badge jp-badge">JP</span>
                   </div>
                   <p className="card-text" style={{ textAlign: 'justify' }}>
                     Master the future through a perfect blend of advanced technology and timeless tradition, offering world-class language programs and career-focused vocational excellence.
@@ -76,10 +76,10 @@ export default function Home() {
             <AnimatedSection delay={0.2}>
               <div className="card">
                 <div style={{ position: 'relative', height: '240px' }}>
-                  <Image 
-                    src="/images/uk_card.png" 
-                    alt="Study in UK" 
-                    fill 
+                  <Image
+                    src="/images/uk_card.png"
+                    alt="Study in UK"
+                    fill
                     style={{ objectFit: 'cover' }}
                   />
                   <div className="card-overlay"></div>
@@ -87,7 +87,7 @@ export default function Home() {
                 <div className="card-body">
                   <div className="card-title">
                     <h3>United Kingdom</h3>
-                    <span className="fi fi-gb" style={{ fontSize: '1.5rem', borderRadius: '2px' }}></span>
+                    <span className="card-badge uk-badge">GB</span>
                   </div>
                   <p className="card-text" style={{ textAlign: 'justify' }}>
                     Step into a legacy of historic academic excellence at globally recognized universities, providing a prestigious gateway to vast international career prospects.
@@ -101,10 +101,10 @@ export default function Home() {
             <AnimatedSection delay={0.3}>
               <div className="card">
                 <div style={{ position: 'relative', height: '240px' }}>
-                  <Image 
-                    src="/images/finland_card.png" 
-                    alt="Study in Finland" 
-                    fill 
+                  <Image
+                    src="/images/finland_card.png"
+                    alt="Study in Finland"
+                    fill
                     style={{ objectFit: 'cover' }}
                   />
                   <div className="card-overlay"></div>
@@ -112,7 +112,7 @@ export default function Home() {
                 <div className="card-body">
                   <div className="card-title">
                     <h3>Finland</h3>
-                    <span className="fi fi-fi" style={{ fontSize: '1.5rem', borderRadius: '2px' }}></span>
+                    <span className="card-badge fi-badge">FI</span>
                   </div>
                   <p className="card-text" style={{ textAlign: 'justify' }}>
                     Thrive within the world’s premier education system, where high living standards and incredible scholarship opportunities meet a serene, pristine natural environment.
@@ -143,7 +143,7 @@ export default function Home() {
                 </div>
               </div>
             </AnimatedSection>
-            
+
             <AnimatedSection delay={0.2}>
               <div className="info-item-large">
                 <div className="info-icon-wrapper">

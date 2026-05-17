@@ -65,6 +65,12 @@ a:hover {
   color: var(--accent-crimson);
 }
 
+a:focus-visible {
+  outline: 2px solid var(--primary-navy);
+  outline-offset: 2px;
+  border-radius: var(--radius-md);
+}
+
 ul {
   list-style: none;
 }
@@ -107,6 +113,7 @@ img {
   align-items: center;
   justify-content: center;
   padding: 12px 28px;
+  min-height: 48px;
   border-radius: var(--radius-md);
   font-weight: 600;
   font-size: 1rem;
@@ -114,6 +121,15 @@ img {
   transition: all var(--transition-fast);
   border: none;
   outline: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent-crimson);
+  outline-offset: 2px;
+}
+
+.btn:active {
+  transform: scale(0.98);
 }
 
 .btn-primary {
@@ -215,52 +231,81 @@ img {
   display: none;
   background: none;
   border: none;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
   font-size: 1.5rem;
   color: var(--primary-navy);
   cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.mobile-menu-btn:focus-visible {
+  outline: 2px solid var(--primary-navy);
+}
+
+.mobile-menu-btn:active {
+  transform: scale(0.95);
+  background-color: var(--bg-light);
 }
 
 /* Hero Section */
 .hero {
   margin-top: 80px;
-  min-height: 600px;
+  min-height: 650px;
   display: flex;
   align-items: center;
-  background: linear-gradient(rgba(43, 52, 118, 0.8), rgba(43, 52, 118, 0.8)), url('/images/hero_banner.png');
+  /* Updated gradient overlay for a richer aesthetic while improving readability */
+  background: 
+    linear-gradient(135deg, rgba(43, 52, 118, 0.5) 0%, rgba(166, 43, 40, 0.5) 100%),
+    url('/images/hero_banner.png');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  color: var(--bg-white);
-  padding: 100px 0;
+  padding: 120px 0;
   position: relative;
   overflow: hidden;
 }
 
-.hero::before {
-  display: none;
-}
-
 .hero-content {
-  max-width: 800px;
+  max-width: 750px;
+  /* UI UX Pro Max: Glassmorphism effect to preserve exact text colors (navy & crimson) with high contrast */
+  background: rgba(210, 230, 255, 0.9);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  padding: 48px;
+  
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+  animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .hero-title {
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 24px;
-  line-height: 1.1;
-  color: white;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
 }
 
 .hero p {
   font-size: 1.25rem;
   margin-bottom: 32px;
-  opacity: 0.9;
+  color: var(--text-muted);
+  line-height: 1.7;
 }
 
 .hero-btns {
   display: flex;
   gap: 16px;
+}
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Sections */
@@ -292,6 +337,10 @@ img {
 .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
+}
+
+.card:active {
+  transform: scale(0.98);
 }
 
 .card-overlay {
@@ -338,13 +387,24 @@ img {
 
 /* Destination Buttons */
 .btn-dest {
-  display: block;
-  text-align: center;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 16px;
   border-radius: var(--radius-md);
   font-weight: 600;
   margin-top: 15px;
   transition: all var(--transition-fast);
+}
+
+.btn-dest:focus-visible {
+  outline: 2px solid var(--primary-navy);
+  outline-offset: 2px;
+}
+
+.btn-dest:active {
+  transform: scale(0.98);
 }
 
 .btn-jp { background-color: #be123c; color: white; }
@@ -678,19 +738,47 @@ img {
   
   .nav-links.active {
     display: flex;
+    gap: 8px;
+  }
+  
+  .nav-links li {
+    width: 100%;
+  }
+  
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 12px 16px;
+    width: 100%;
+    border-radius: var(--radius-md);
+  }
+  
+  .nav-links a:hover {
+    background-color: var(--bg-light);
   }
   
   .mobile-menu-btn {
-    display: block;
+    display: flex;
   }
   
   .hero-title {
     font-size: 2.5rem;
   }
   
+  .hero-content {
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+  
   .hero-btns, .form-grid-2 {
     flex-direction: column;
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .hero-btns .btn {
+    width: 100%;
   }
 
   .dest-section {
@@ -699,5 +787,19 @@ img {
 
   .dest-img-small {
     max-width: 100%;
+  }
+}
+
+/* Animations */
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
