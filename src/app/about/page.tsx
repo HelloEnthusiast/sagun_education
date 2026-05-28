@@ -9,6 +9,33 @@ export const metadata: Metadata = {
   description: "Learn about Sagun Education Pvt. Ltd., our mission, vision, and our team of expert counselors in Gajuri, Dhading.",
 };
 
+const team = [
+  {
+    image: "/images/team/ceo.jpeg",
+    alt: "Founder / Leader",
+    name: "Full Name",
+    role: "CEO",
+  },
+  {
+    image: "/images/team/finland-japan-counseeler.jpeg",
+    alt: "Senior Counselor — Japan & Finland",
+    name: "Vicky Bhattrai",
+    role: " Finland and Japan counsellor",
+  },
+  {
+    image: "/images/team/uk-counseeler.jpeg",
+    alt: "Senior Counselor — UK",
+    name: "Chanda Shrestha",
+    role: "UK counsellor",
+  },
+  {
+    image: "/images/team/document-officer.jpeg",
+    alt: "Visa Processing Officer",
+    name: "Full Name",
+    role: "Document Officer",
+  },
+];
+
 export default function About() {
   return (
     <main>
@@ -66,58 +93,21 @@ export default function About() {
           </AnimatedSection>
           
           <div className="card-grid" style={{ marginTop: '40px' }}>
-            <AnimatedSection delay={0.1} className="team-member">
-              <div style={{ position: 'relative', width: '200px', height: '200px', margin: '0 auto 20px' }}>
-                <Image 
-                  src="/images/team_member.png" 
-                  alt="Founder/Leader" 
-                  fill 
-                  className="team-img"
-                  style={{ objectFit: 'cover', borderRadius: '50%' }}
-                />
-              </div>
-              <h4 className="team-name">Founder / Leader</h4>
-              <p className="team-role">Strategic Leadership</p>
-            </AnimatedSection>
-            <AnimatedSection delay={0.2} className="team-member">
-              <div style={{ position: 'relative', width: '200px', height: '200px', margin: '0 auto 20px' }}>
-                <Image 
-                  src="/images/team_member.png" 
-                  alt="Senior Counselor" 
-                  fill 
-                  className="team-img"
-                  style={{ objectFit: 'cover', borderRadius: '50%' }}
-                />
-              </div>
-              <h4 className="team-name">Senior Counselor</h4>
-              <p className="team-role">Japan & Finland Specialist</p>
-            </AnimatedSection>
-            <AnimatedSection delay={0.3} className="team-member">
-              <div style={{ position: 'relative', width: '200px', height: '200px', margin: '0 auto 20px' }}>
-                <Image 
-                  src="/images/team_member.png" 
-                  alt="Senior Counselor" 
-                  fill 
-                  className="team-img"
-                  style={{ objectFit: 'cover', borderRadius: '50%' }}
-                />
-              </div>
-              <h4 className="team-name">Senior Counselor</h4>
-              <p className="team-role">United Kingdom Specialist</p>
-            </AnimatedSection>
-            <AnimatedSection delay={0.4} className="team-member">
-              <div style={{ position: 'relative', width: '200px', height: '200px', margin: '0 auto 20px' }}>
-                <Image 
-                  src="/images/team_member.png" 
-                  alt="Visa Processing Officer" 
-                  fill 
-                  className="team-img"
-                  style={{ objectFit: 'cover', borderRadius: '50%' }}
-                />
-              </div>
-              <h4 className="team-name">Visa Processing Officer</h4>
-              <p className="team-role">Technical Documentation</p>
-            </AnimatedSection>
+            {team.map((member, i) => (
+              <AnimatedSection key={member.alt} delay={0.1 * (i + 1)} className="team-member" style={{ textAlign: 'center' }}>
+                <div style={{ position: 'relative', width: '200px', height: '320px', margin: '0 auto 20px' }}>
+                  <Image 
+                    src={member.image}
+                    alt={member.alt}
+                    fill 
+                    className="team-img"
+                    style={{ objectFit: 'cover', borderRadius: '5%' }}
+                  />
+                </div>
+                <h4 className="team-name">{member.name}</h4>
+                <p className="team-role">{member.role}</p>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>
